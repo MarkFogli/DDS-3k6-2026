@@ -4,7 +4,8 @@ Proyect-PrimerosPasos-conGit
 aveces no se puede editar
 otra rama
  
-    ## Tecnologias
-    - Node.js
+# Tecnologias
+   - Node.js
+
 # OTra tecnologia
 - Express
