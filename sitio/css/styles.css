@@ -1,0 +1,6 @@
+.footer
+{
+    position: fixed; /* Posición fija para que siempre esté visible */
+    bottom: 0%; /* Posición en la parte inferior de la página */
+
+}

@@ -26,7 +26,7 @@
                 <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" href="#login">Login</a>
                 </li>
                
             </ul>
@@ -37,42 +37,50 @@
 
     </header>
     <main >  
-        <section id="carrusel">
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="container">
+            <div class="row justify-content-center pt-5">
+                <div class="col-12 col-md-6 col-lg-4 col-sm-8">
+
+                    <div class="card shadow">
+
+                        <div class="card-body">
+
+                            <h2 class="card-title">Iniciar Sesion</h2>
+
+                            <form onsubmit="alertaLogin(event);"> <!-- Formulario de Login, se llama a la función validarLogin al enviar el formulario -->
+                                
+                                    
+                                <div class="col-auto">
+                                    <h5>Legajo</h5>
+                                    <label for="Legajo" class="visually-hidden">Legajo</label>
+                                    <input type="text" class="form-control" id="Legajo" placeholder="Legajo">
+                                </div>
+                                <div class="col-auto">
+                                    <h5>Email</h5>
+                                    <label for="email" class="visually-hidden">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="col-auto">
+                                    <h5>Contraseña</h5>
+                                    <label for="inputPassword2" class="visually-hidden">Contraseña</label>
+                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+                                </div>
+                                <div class="col-auto" >
+                                    <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                                </div>
+                                
+                            </form>
+
+                        </div>
+
                     </div>
-
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                        <img src="https://picsum.photos/id/1/1920/700" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="https://picsum.photos/id/26/1920/700" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                        <img src="https://picsum.photos/id/20/1920/700" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
 
                 </div>
 
-        </section>
-        <section id="contacto">
+            </div>
 
-        </section>
+        </div>
+        
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script> 
     <section id="contacto">
@@ -136,5 +144,6 @@
         </div>
 
     </section>
+    <script src="js/login.js"></script>
 </body>
 </html>
