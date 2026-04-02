@@ -47,23 +47,23 @@
 
                             <h2 class="card-title">Iniciar Sesion</h2>
 
-                            <form onsubmit="alertaLogin(event);"> <!-- Formulario de Login, se llama a la función validarLogin al enviar el formulario -->
+                            <form onsubmit="validarUsuario(event);"> <!-- Formulario de Login, se llama a la función validarLogin al enviar el formulario -->
                                 
                                     
                                 <div class="col-auto">
                                     <h5>Legajo</h5>
-                                    <label for="Legajo" class="visually-hidden">Legajo</label>
-                                    <input type="text" class="form-control" id="Legajo" placeholder="Legajo">
+                                    <label for="legajo" class="visually-hidden">Legajo</label>
+                                    <input required type="text" class="form-control" id="legajo" placeholder="Legajo">
                                 </div>
                                 <div class="col-auto">
                                     <h5>Email</h5>
                                     <label for="email" class="visually-hidden">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input required type="email" class="form-control" id="email" placeholder="Email">
                                 </div>
                                 <div class="col-auto">
                                     <h5>Contraseña</h5>
-                                    <label for="inputPassword2" class="visually-hidden">Contraseña</label>
-                                    <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+                                    <label for="password" class="visually-hidden">Contraseña</label>
+                                    <input required type="password" class="form-control" id="password" placeholder="Contraseña">
                                 </div>
                                 <div class="col-auto" >
                                     <button type="submit" class="btn btn-primary w-100">Ingresar</button>

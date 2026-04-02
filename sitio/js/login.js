@@ -1,18 +1,24 @@
-function alertaLogin(event) {
-    event.preventDefault(); // Evita que el formulario se envíe automáticamente
-    alert("¡funcionando!"); // Muestra una alerta de éxito
+
+const objetoAdmin = {legajo: 'mark', mail: 'marcofoglino45@gmail.com', password: '35279661'}
+
+function validarUsuario(event) {    
+
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente  
+
+    const $legajo = document.getElementById('legajo')
+    const legajo = $legajo.value.trim();
+    const $email = document.getElementById('email')
+    const email = $email.value.trim();
+    const $password = document.getElementById('password')
+    const password = $password.value.trim();
+
+    // Validar si el email y la contraseña coinciden con el usuario admin
+    if (legajo === objetoAdmin.legajo && email === objetoAdmin.mail && password === objetoAdmin.password) {
+        alert("¡Bienvenido, Marki, eres el unico usuario ADMIN!");
+        window.location.href = "index.html";
+        return;
+    }
+    else {
+        alert("Credenciales INCORRECTAS.");
+    }
 }
-
-function validarLogin(event) {
-    event.preventDefault(); // Evita que el formulario se envíe automáticamente
-
-    // Aquí puedes agregar la lógica de validación, por ejemplo:
-    const legajo = document.getElementById('inputLegajo').value;
-    const password = document.getElementById('inputPassword2').value;
-}
-
-const lstUsuarios = [
-    { legajo: '12345', password: 'password123' },
-    { legajo: '67890', password: 'password456' }
-];
-   
