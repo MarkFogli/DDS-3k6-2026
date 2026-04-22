@@ -41,4 +41,5 @@ async function main() {
     }
     
     
-main();
+await main();
+console.log("se ejecuta después de main()");
