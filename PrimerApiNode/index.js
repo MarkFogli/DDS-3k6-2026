@@ -1,17 +1,41 @@
-import http from 'http'; // importamos el módulo http para crear un servidor
-//creamos un servidor http que escuche en el puerto 3000
+import express from "express"; 
+import { getAllProducts } from "./services/products-service.js"; // Importamos la función para obtener los productos
 
-const server = http.createServer((req, res) => {
-    // callback que se ejecuta cada vez que se recibe una solicitud al servidor
 
-    // manejamos la solicitud entrante y enviamos una respuesta
-    res.statusCode = 200; // establecemos el código de estado de la respuesta a 200 (OK)
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hola, mundo! Este es un servidor HTTP básico.'); // enviamos la respuesta al cliente
+const app = express(); // Crea una instancia de la aplicación Express
+const PORT = 3000;
+
+app.use(express.json()); // Middleware para parsear el cuerpo de las solicitudes como JSON
+app.get("/", (req, res) => {
+    res.json({ message: "Hola, mundo! Esta es una API básica con Express." });
+    // Enviamos una respuesta JSON al cliente con un mensaje de bienvenida
+});
+app.listen(PORT, () => {
+    console.log(`API corriendo en el puerto ${PORT}`);
 });
 
-// el servidor escucha en el puerto 3000
-server.listen(3000, () => {
-    // callback en funcion arrow que se ejecuta cuando el servidor comienza a escuchar
-    console.log('Servidor corriendo en http://localhost:3000/');
+app.get("/products", (req, res) => {
+    // Endpoint para obtener todos los productos
+    try {
+        const products = getAllProducts(); // Llamamos a la función para obtener los productos
+        res.json(products); // Enviamos la lista de productos como respuesta JSON // codigo 200 por defecto
+    } catch (error) {
+        res.status(500).json({ error: "Error al obtener los productos" }); // En caso de error, enviamos una respuesta con código 500
+    }
+});
+
+app.post("/products", (req, res) => {
+    // Endpoint para crear un nuevo producto (aún no implementado)
+    try {
+        // Aquí se implementaría la lógica para crear un nuevo producto
+        const data = req.body; // Obtenemos los datos del nuevo producto desde el cuerpo de la solicitud
+        if (data) {
+            addProduct(data); // Llamamos a una función para agregar el producto (aún no implementada)
+            res.json({ message: "Producto creado exitosamente" }); // Enviamos una respuesta de éxito
+        } else {
+            res.status(400).json({ error: "Datos del producto no proporcionados" }); // Si no se proporcionan datos, enviamos una respuesta con código 400
+        }
+    }   catch (error) { 
+        res.status(500).json({ error: "Error al crear el producto" }); // En caso de error, enviamos una respuesta con código 500    
+    }    
 });
