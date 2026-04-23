@@ -1,6 +1,8 @@
 import express from "express"; 
 import { getAllProducts } from "./services/products-service.js"; // Importamos la función para obtener los productos
-
+// Importamos la configuración de la base de datos (se ejecuta secuencialmente todo el archivo, por lo que se establece la conexión a la base de datos)
+import db from "./data/db-init.js";
+import { conexion } from  "./data/conexion-sequelice.js"
 
 const app = express(); // Crea una instancia de la aplicación Express
 const PORT = 3000;
@@ -10,7 +12,10 @@ app.get("/", (req, res) => {
     res.json({ message: "Hola, mundo! Esta es una API básica con Express." });
     // Enviamos una respuesta JSON al cliente con un mensaje de bienvenida
 });
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
+    //adelante de los metodos de sqlite les agregamos await
+    await conexion.sync()
+    console.log('Base de datos sincronizada')
     console.log(`API corriendo en el puerto ${PORT}`);
 });
 
@@ -39,3 +44,4 @@ app.post("/products", (req, res) => {
         res.status(500).json({ error: "Error al crear el producto" }); // En caso de error, enviamos una respuesta con código 500    
     }    
 });
+
