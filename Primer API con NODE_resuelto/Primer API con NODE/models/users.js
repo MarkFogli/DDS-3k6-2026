@@ -22,7 +22,7 @@ export const Usuario = cnn_db.define("users", {
     "correo": {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
+        unique: true
         
     },
     "password": {
@@ -32,7 +32,7 @@ export const Usuario = cnn_db.define("users", {
 },
     {
         timestamps: false,
-        // con eszta reconoce que cnn_db es la conexión a la base de datos, y no crea una nueva conexión.
+        // con esta reconoce que cnn_db es la conexión a la base de datos, y no crea una nueva conexión.
         cnn_db
     }
 
