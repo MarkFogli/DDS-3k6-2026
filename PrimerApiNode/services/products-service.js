@@ -8,11 +8,11 @@ import { Product } from "../models/productos.js";
 
 
 // Función para obtener todos los productos
-export function getAllProducts() {
-    return products;
+export async function getAllProducts() {
+    return await Product.findAll();
 }
 
-export function addProduct(product) {
-    
-    products.push(product);
-}
+export async function addProduct(product) {
+    return await Product.create(product);
+} 
+   

@@ -1,5 +1,6 @@
 //definimos modelo
 import { toDefaultValue } from 'sequelize/lib/utils'
+import { sqlite } from 'sequelize/lib/dialects/sqlite/index.js'
 import { conexion } from '../data/conexion-sequelice.js'
 import { DataTypes } from 'sequelize'
 
