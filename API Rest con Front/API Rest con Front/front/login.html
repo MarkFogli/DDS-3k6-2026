@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Interactivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="navbar-logo" src="/images/logo.png" alt="logo"
+                        srcset="">SITIO I</a>
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="index.html">HOME</a>
+                    <a class="nav-link" href="#contacto">CONTÁCTENOS</a>
+                    <a class="nav-link" href="login.html" id="linkLogin">LOGIN</a>
+                    <span class="navbar-text text-info d-none" id="saludoUser"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="row justify-content-center pt-5">
+                <div class="col-12 col-md-6 col-lg-4 col-sm-8">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h3 class="text-center mb-4">Iniciar Sesión</h3>
+                            <form>
+                                <div class="mb-">
+                                    <label class="form-label">Email</label>
+                                    <input id="email" type="email" class="form-control" placeholder="Ingrese su email">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Contraseña</label>
+                                    <input id="password" type="password" class="form-control" placeholder="Ingrese su contraseña">
+                                </div>
+
+                                <button type="button" onclick="login()" class="btn btn-secondary w-100">
+                                    Ingresar
+                                </button>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer class="footer">
+        <p><strong> &copy; 2026 SITIO I</strong>. Todos los derechos reservados.</p>
+    </footer>
+    <!-- SCRIPTS: -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/login.js"></script>
+</body>
+
+</html>
